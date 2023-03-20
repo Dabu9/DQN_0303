@@ -6,8 +6,8 @@ from PIL import Image, ImageTk  # For adding images into the canvas widget
 
 # Setting the sizes for the environment
 pixels = 20  # pixels
-env_height = 25  # grid height
-env_width = 25  # grid width
+env_height = 10  # grid height
+env_width = 10  # grid width
 
 # Global variable for dictionary with coordinates for the final route
 a = {}
@@ -127,7 +127,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 5
         # Defining the center of obstacle 5
-        obstacle5_center = self.o + np.array([pixels * 4, pixels * 10])
+        obstacle5_center = self.o + np.array([pixels * 6, pixels * 3])
         # Building the obstacle 5
         self.obstacle5 = self.canvas_widget.create_rectangle(
             obstacle5_center[0] - 10, obstacle5_center[1] - 10,  # Top left corner
@@ -142,7 +142,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 6
         # Defining the center of obstacle 6
-        obstacle6_center = self.o + np.array([pixels * 4, pixels * 11])
+        obstacle6_center = self.o + np.array([pixels * 6, pixels * 4])
         # Building the obstacle 6
         self.obstacle6 = self.canvas_widget.create_rectangle(
             obstacle6_center[0] - 10, obstacle6_center[1] - 10,  # Top left corner
@@ -157,7 +157,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 7
         # Defining the center of obstacle 7
-        obstacle7_center = self.o + np.array([pixels * 4, pixels * 12])
+        obstacle7_center = self.o + np.array([pixels * 6, pixels * 5])
         # Building the obstacle 7
         self.obstacle7 = self.canvas_widget.create_rectangle(
             obstacle7_center[0] - 10, obstacle7_center[1] - 10,  # Top left corner
@@ -172,7 +172,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 8
         # Defining the center of obstacle 8
-        obstacle8_center = self.o + np.array([pixels * 5, pixels * 12])
+        obstacle8_center = self.o + np.array([pixels * 4, pixels * 6])
         # Building the obstacle 8
         self.obstacle8 = self.canvas_widget.create_rectangle(
             obstacle8_center[0] - 10, obstacle8_center[1] - 10,  # Top left corner
@@ -187,7 +187,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 9
         # Defining the center of obstacle 9
-        obstacle9_center = self.o + np.array([pixels * 6, pixels * 12])
+        obstacle9_center = self.o + np.array([pixels * 5, pixels * 6])
         # Building the obstacle 9
         self.obstacle9 = self.canvas_widget.create_rectangle(
             obstacle9_center[0] - 10, obstacle9_center[1] - 10,  # Top left corner
@@ -202,7 +202,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 10
         # Defining the center of obstacle 10
-        obstacle10_center = self.o + np.array([pixels * 2, pixels * 18])
+        obstacle10_center = self.o + np.array([pixels * 6, pixels * 6])
         # Building the obstacle 10
         self.obstacle10 = self.canvas_widget.create_rectangle(
             obstacle10_center[0] - 10, obstacle10_center[1] - 10,  # Top left corner
@@ -217,7 +217,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 11
         # Defining the center of obstacle 11
-        obstacle11_center = self.o + np.array([pixels * 3, pixels * 18])
+        obstacle11_center = self.o + np.array([pixels * 1, pixels * 5])
         # Building the obstacle 11
         self.obstacle11 = self.canvas_widget.create_rectangle(
             obstacle11_center[0] - 10, obstacle11_center[1] - 10,  # Top left corner
@@ -232,7 +232,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 12
         # Defining the center of obstacle 12
-        obstacle12_center = self.o + np.array([pixels * 4, pixels * 18])
+        obstacle12_center = self.o + np.array([pixels * 1, pixels * 6])
         # Building the obstacle 12
         self.obstacle12 = self.canvas_widget.create_rectangle(
             obstacle12_center[0] - 10, obstacle12_center[1] - 10,  # Top left corner
@@ -247,7 +247,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 13
         # Defining the center of obstacle 13
-        obstacle13_center = self.o + np.array([pixels * 3, pixels * 19])
+        obstacle13_center = self.o + np.array([pixels * 1, pixels * 7])
         # Building the obstacle 13
         self.obstacle13 = self.canvas_widget.create_rectangle(
             obstacle13_center[0] - 10, obstacle13_center[1] - 10,  # Top left corner
@@ -262,7 +262,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 14
         # Defining the center of obstacle 14
-        obstacle14_center = self.o + np.array([pixels * 3, pixels * 20])
+        obstacle14_center = self.o + np.array([pixels * 5, pixels * 0])
         # Building the obstacle 14
         self.obstacle14 = self.canvas_widget.create_rectangle(
             obstacle14_center[0] - 10, obstacle14_center[1] - 10,  # Top left corner
@@ -277,7 +277,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 15
         # Defining the center of obstacle 15
-        obstacle15_center = self.o + np.array([pixels * 3, pixels * 21])
+        obstacle15_center = self.o + np.array([pixels * 5, pixels * 1])
         # Building the obstacle 15
         self.obstacle15 = self.canvas_widget.create_rectangle(
             obstacle15_center[0] - 10, obstacle15_center[1] - 10,  # Top left corner
@@ -292,7 +292,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 16
         # Defining the center of obstacle 16
-        obstacle16_center = self.o + np.array([pixels * 10, pixels * 22])
+        obstacle16_center = self.o + np.array([pixels * 3, pixels * 8])
         # Building the obstacle 16
         self.obstacle16 = self.canvas_widget.create_rectangle(
             obstacle16_center[0] - 10, obstacle16_center[1] - 10,  # Top left corner
@@ -307,7 +307,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 17
         # Defining the center of obstacle 17
-        obstacle17_center = self.o + np.array([pixels * 11, pixels * 15])
+        obstacle17_center = self.o + np.array([pixels * 3, pixels * 9])
         # Building the obstacle 17
         self.obstacle17 = self.canvas_widget.create_rectangle(
             obstacle17_center[0] - 10, obstacle17_center[1] - 10,  # Top left corner
@@ -322,7 +322,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 18
         # Defining the center of obstacle 18
-        obstacle18_center = self.o + np.array([pixels * 12, pixels * 15])
+        obstacle18_center = self.o + np.array([pixels * 4, pixels * 8])
         # Building the obstacle 18
         self.obstacle18 = self.canvas_widget.create_rectangle(
             obstacle18_center[0] - 10, obstacle18_center[1] - 10,  # Top left corner
@@ -337,7 +337,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 19
         # Defining the center of obstacle 19
-        obstacle19_center = self.o + np.array([pixels * 13, pixels * 15])
+        obstacle19_center = self.o + np.array([pixels * 4, pixels * 9])
         # Building the obstacle 19
         self.obstacle19 = self.canvas_widget.create_rectangle(
             obstacle19_center[0] - 10, obstacle19_center[1] - 10,  # Top left corner
@@ -352,7 +352,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 20
         # Defining the center of obstacle 2
-        obstacle20_center = self.o + np.array([pixels * 13, pixels * 14])
+        obstacle20_center = self.o + np.array([pixels * 7, pixels * 8])
         # Building the obstacle 20
         self.obstacle20 = self.canvas_widget.create_rectangle(
             obstacle20_center[0] - 10, obstacle20_center[1] - 10,  # Top left corner
@@ -367,7 +367,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 21
         # Defining the center of obstacle 21
-        obstacle21_center = self.o + np.array([pixels * 13, pixels * 13])
+        obstacle21_center = self.o + np.array([pixels * 8, pixels * 8])
         # Building the obstacle 21
         self.obstacle21 = self.canvas_widget.create_rectangle(
             obstacle21_center[0] - 10, obstacle21_center[1] - 10,  # Top left corner
@@ -382,7 +382,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 22
         # Defining the center of obstacle 22
-        obstacle22_center = self.o + np.array([pixels * 21, pixels * 22])
+        obstacle22_center = self.o + np.array([pixels * 7, pixels * 9])
         # Building the obstacle 22
         self.obstacle22 = self.canvas_widget.create_rectangle(
             obstacle22_center[0] - 10, obstacle22_center[1] - 10,  # Top left corner
@@ -397,7 +397,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 23
         # Defining the center of obstacle 23
-        obstacle23_center = self.o + np.array([pixels * 20, pixels * 22])
+        obstacle23_center = self.o + np.array([pixels * 9, pixels * 5])
         # Building the obstacle 23
         self.obstacle23 = self.canvas_widget.create_rectangle(
             obstacle23_center[0] - 10, obstacle23_center[1] - 10,  # Top left corner
@@ -412,7 +412,7 @@ class Environment(tk.Tk, object):
 
         # Obstacle 24
         # Defining the center of obstacle 24
-        obstacle24_center = self.o + np.array([pixels * 19, pixels * 22])
+        obstacle24_center = self.o + np.array([pixels * 9, pixels * 6])
         # Building the obstacle 24
         self.obstacle24 = self.canvas_widget.create_rectangle(
             obstacle24_center[0] - 10, obstacle24_center[1] - 10,  # Top left corner
@@ -822,7 +822,7 @@ class Environment(tk.Tk, object):
             outline='#FF1493', fill='#FF1493')
 
         # Final Point - yellow point
-        flag_center = self.o + np.array([pixels * 17, pixels * 17])
+        flag_center = self.o + np.array([pixels * 7, pixels * 5])
         # Building the flag
         self.flag = self.canvas_widget.create_rectangle(
             flag_center[0] - 10, flag_center[1] - 10,  # Top left corner

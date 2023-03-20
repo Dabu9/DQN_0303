@@ -1,5 +1,5 @@
 from env_small_complex3 import Environment
-from RL_brain import DeepQNetwork
+from RL_brain_complex2 import DeepQNetwork
 from torchsummary import summary
 
 
@@ -20,7 +20,7 @@ def run_maze():
             observation_, reward, done, flag_times = env.step(action)
             RL.store_transition(observation, action, reward, observation_)
             # 前200次用于建立数据集
-            if (total_step > 1000) and (total_step % 5 == 0):
+            if (total_step > 2000) and (total_step % 3 == 0):
                 loss = RL.learn()
                 loss_rec += [loss]
             observation = observation_
@@ -41,12 +41,13 @@ def run_maze():
 if __name__ == '__main__':
     env = Environment()
     RL = DeepQNetwork(env.n_actions, env.n_features,
-                      n_hidden=60,
+                      n_hidden1=16,
+                      n_hidden2=16,
                       learning_rate=0.01,
                       reward_decay=0.9,
                       e_greedy=0.9,
                       replace_target_iter=200,
-                      memory_size=8000
+                      memory_size=4000
                       )
     env.after(100, run_maze)
     env.mainloop()

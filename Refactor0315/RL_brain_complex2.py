@@ -13,27 +13,33 @@ torch.manual_seed(1)
 
 # 定义网络结构
 class Net(nn.Module):
-    def __init__(self, n_feature, n_hidden, n_output):
+    def __init__(self, n_feature, n_hidden1, n_hidden2, n_output):
         super(Net, self).__init__()
         # nn.Linear(in_feature, out_feature)  全连接层
         # n_feature 指observation的size, n_hidden = 20  n_output = n_action
-        self.el = nn.Linear(n_feature, n_hidden)   # evaluate net
-        self.q = nn.Linear(n_hidden, n_output)     # q_target net
+        self.el1 = nn.Linear(n_feature, n_hidden1)  # evaluate net
+        self.el2 = nn.Linear(n_hidden1, n_hidden2)  # additional hidden layer
+        self.q = nn.Linear(n_hidden2, n_output)  # q_target net
 
     def forward(self, x):
-        x = self.el(x)
+        x = self.el1(x)
+        x = F.relu(x)
+        x = self.el2(x)  # pass through additional hidden layer
         x = F.relu(x)
         x = self.q(x)
+
         return x
 
 
 class DeepQNetwork:
-    def __init__(self, n_actions, n_features, n_hidden=30, learning_rate=0.01, reward_decay=0.9, e_greedy=0.9,
+    def __init__(self, n_actions, n_features, n_hidden1=6, n_hidden2=12, learning_rate=0.01, reward_decay=0.9, e_greedy=0.9,
                  replace_target_iter=200, memory_size=500, batch_size=32, e_greedy_increment=0.001,
                  ):
         self.n_actions = n_actions
         self.n_features = n_features
-        self.n_hidden = n_hidden
+        self.n_hidden1 = n_hidden1
+        self.n_hidden2 = n_hidden2
+
         self.lr = learning_rate
         self.gamma = reward_decay
         self.epsilon_max = e_greedy
@@ -55,8 +61,8 @@ class DeepQNetwork:
         self._build_net()
 
     def _build_net(self):
-        self.q_eval = Net(self.n_features, self.n_hidden, self.n_actions)
-        self.q_target = Net(self.n_features, self.n_hidden, self.n_actions)
+        self.q_eval = Net(self.n_features, self.n_hidden1, self.n_hidden2, self.n_actions)
+        self.q_target = Net(self.n_features, self.n_hidden1, self.n_hidden2, self.n_actions)
         self.optimizer = torch.optim.RMSprop(self.q_eval.parameters(), lr=self.lr)
 
     def store_transition(self, s, a, r, s_):
