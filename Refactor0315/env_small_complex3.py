@@ -47,11 +47,11 @@ class Environment(tk.Tk, object):
                                        height=env_height * pixels,
                                        width=env_width * pixels)
 
-        # Uploading an image for background
+        # Uploading an image1 for background
         # img_background = Image.open("images/bg.png")
         # self.background = ImageTk.PhotoImage(img_background)
         # Creating background on the widget
-        # self.bg = self.canvas_widget.create_image(0, 0, anchor='nw', image=self.background)
+        # self.bg = self.canvas_widget.create_image(0, 0, anchor='nw', image1=self.background)
 
         # 创建网格线
         for column in range(0, env_width * pixels, pixels):
@@ -822,7 +822,7 @@ class Environment(tk.Tk, object):
             outline='#FF1493', fill='#FF1493')
 
         # Final Point - yellow point
-        flag_center = self.o + np.array([pixels * 7, pixels * 5])
+        flag_center = self.o + np.array([pixels * 8, pixels * 7])
         # Building the flag
         self.flag = self.canvas_widget.create_rectangle(
             flag_center[0] - 10, flag_center[1] - 10,  # Top left corner

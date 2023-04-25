@@ -41,8 +41,8 @@ def run_maze():
 if __name__ == '__main__':
     env = Environment()
     RL = DeepQNetwork(env.n_actions, env.n_features,
-                      n_hidden1=16,
-                      n_hidden2=16,
+                      n_hidden1=24,
+                      n_hidden2=24,
                       learning_rate=0.01,
                       reward_decay=0.9,
                       e_greedy=0.9,

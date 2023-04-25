@@ -9,7 +9,7 @@ if sys.version_info.major == 2:
 else:
     import tkinter as tk
 # maze_data = [6,   5,   6]
-# map_data [seed,size,hell]
+# map_data.py [seed,size,hell]
 # maze_data = [6,   5,   6]
 maze_data = [2, 25, 24]
 

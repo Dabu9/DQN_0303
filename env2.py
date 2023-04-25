@@ -45,11 +45,11 @@ class Environment(tk.Tk, object):
                                        height=env2_height * pixels,
                                        width=env2_width * pixels)
 
-        # Uploading an image for background
+        # Uploading an image1 for background
         # img_background = Image.open("images/bg.png")
         # self.background = ImageTk.PhotoImage(img_background)
         # Creating background on the widget
-        # self.bg = self.canvas_widget.create_image(0, 0, anchor='nw', image=self.background)
+        # self.bg = self.canvas_widget.create_image(0, 0, anchor='nw', image1=self.background)
 
         # 创建网格线
         for column in range(0, env2_width * pixels, pixels):
